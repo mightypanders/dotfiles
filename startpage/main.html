@@ -146,7 +146,7 @@
                     <a class="bookmark" href="https://youtube.com" target="_blank">Youtube</a>
                     <a class="bookmark" href="https://play.spotify.com" target="_blank">Spotify</a>
                     <a class="bookmark" href="https://musicforprogramming.net" target="_blank">mfp();</a>
-                    <a class="bookmark" href="https://youtube.com" target="_blank">Youtube</a>
+                    <a class="bookmark" href="http://yavin:83" target="_blank">Heimdall</a>
                 </div>
             </div>
             <div class="bookmark-set">
@@ -195,14 +195,12 @@
     </div>
 
     <script>
-        // Search on enter key event
         function search(e) {
             if (e.keyCode == 13) {
                 var val = document.getElementById("search-field").value;
                 window.open("https://google.com/search?q=" + val);
             }
         }
-        // Get current time and format
         function getTime() {
             let date = new Date(),
                 min = date.getMinutes(),
@@ -215,17 +213,16 @@
 
         window.onload = () => {
             document.getElementById("clock").innerHTML = getTime();
-            // Set clock interval to tick clock
             setInterval(() => {
                 document.getElementById("clock").innerHTML = getTime();
             }, 100);
         }
 
         document.addEventListener("keydown", event => {
-            if (event.keyCode == 32) {          // Spacebar code to open search
+            if (event.keyCode == 32) {          
                 document.getElementById('search').style.display = 'flex';
                 document.getElementById('search-field').focus();
-            } else if (event.keyCode == 27) {   // Esc to close search
+            } else if (event.keyCode == 27) {   
                 document.getElementById('search-field').value = '';
                 document.getElementById('search-field').blur();
                 document.getElementById('search').style.display = 'none';
