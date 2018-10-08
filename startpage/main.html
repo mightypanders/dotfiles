@@ -40,6 +40,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            z-index: 0;
         }
         #search-field {
             width: 90%;
@@ -99,9 +100,11 @@
             height: auto;
             margin: 0em .5em;
             transition:box-shadow 100ms ease-in-out;
+            z-index: 0;
         }
         .bookmark-set:hover {
-            box-shadow: 0 0 8px rgba(255,255,255,0.9)
+            box-shadow: 0 0 8px rgba(255,255,255,0.6);
+            z-index: 1;
         }
         .bookmark-inner-container {
             overflow-y: visible;
@@ -147,7 +150,7 @@
             <div class="bookmark-set">
                 <div class="bookmark-title">Daily</div>
                 <div class="bookmark-inner-container">
-                    <a class="bookmark" href="https://todoist.com/" ><p class="box">Todoist</p></a>
+                    <a class="bookmark" href="https://to-do.microsoft.com/" ><p class="box">To Do</p></a>
                     <a class="bookmark" href="https://mail.google.com/" ><p class="box">gMail</p></a>
                     <a class="bookmark" href="https://drive.google.com/" ><p class="box">gDrive</p></a>
                     <a class="bookmark" href="https://keep.google.com/" ><p class="box">gKeep</p></a>
@@ -243,10 +246,12 @@
         document.addEventListener("keydown", event => {
             if (event.keyCode == 32) {          
                 document.getElementById('search').style.display = 'flex';
+                document.getElementById('search').style.zIndex = 2;
                 document.getElementById('search-field').focus();
             } else if (event.keyCode == 27) {   
                 document.getElementById('search-field').value = '';
                 document.getElementById('search-field').blur();
+                document.getElementById('search').style.zIndex = 0;
                 document.getElementById('search').style.display = 'none';
             }
         });
