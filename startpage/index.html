@@ -1,34 +1,262 @@
-<html>
-    <head>
-            <meta http-equiv="refresh" content="3" >
-    </head>
-    <title>
-        Server Start Page
-    </title>
-    <style>
-        .middle{
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Home</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+        body {
+            background-color: #4b6855;
+            margin: 0px;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
             align-items: center;
-            align-content: center;
-            height: inherit;
+            justify-content: center;
+            flex-direction: column;
         }
-        .middle>p{
+        #clock {
+            font-family: sans-serif;
+            font-size: 4.5rem;
+            font-weight: 600;
+            font-family: "Roboto Mono";
+            color: #fff;
+            margin-bottom: .25em;
         }
-        img {
-            width: 200px;
+        #search {
+            width: 100%;
+            height: 100vh;
+            background-color: #272727;
+            display: none;
+            position: absolute;
+            box-sizing: border-box;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 0;
         }
-        body { 
-            background-color:black;
+        #search-field {
+            width: 90%;
+            padding: .75em 1em;
+            box-sizing: border-box;
+            background-color: #272727;
+            border: solid 0px #272727;
+            font-family: "Roboto Mono";
+            font-size: 4rem;
+            color: #f2f2f2;
+            outline: none;
+            border-radius: 3px;
+            margin-bottom: 1em;
+            text-align: center;
+        }
+        .weather-container {
+            width: 30%;
+            background-color: #272727;
+            padding: 1em;
+            border-radius: 3px;
+            font-family: "Roboto Mono";
+            color: #fff;
+            text-align: center;
+        }
+        .inline {
+            display: inline-block;
+        }
+        .bookmark-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            margin: 1em 0em;
+        }
+        @media only screen and (max-width: 1480px) {
+            .container {
+                height: auto;
+            }
+            #clock {
+                margin-top: 1em;
+            }
+            .container>.bookmark-container {
+                flex-wrap: wrap;
+                width: 80%;
+            }
+            .bookmark-container>.bookmark-set {
+                    width: auto;
+                margin: 1em 0.5em;
+            }
+        }
+        .bookmark-set {
+            padding: 1em;
+            background-color: #272727;
+            border-radius: 3px;
+            font-family: "Roboto Mono";
+            font-size: 1.35rem;
+            height: auto;
+            margin: 0em .5em;
+            transition:box-shadow 100ms ease-in-out;
+            z-index: 0;
+        }
+        .bookmark-set:hover {
+            box-shadow: 0 0 8px rgba(255,255,255,0.6);
+            z-index: 1;
+        }
+        .bookmark-inner-container {
+            overflow-y: visible;
+            overflow-x: visible;
+            height: 80%;
+            vertical-align: top;
+        }
+        .bookmark-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            margin: 0em 0em .35em 0em;
+        }
+        .bookmark {
+            text-decoration: none;
+            text-align: center;
+            color: #8c8c8b;
+            display: block;
+            margin: .5em 0em;
+            border: solid #464646 2px;
+            border-radius: 3px;
+        }
+        .bookmark:hover {
+            color: #fff;
+            background-color: #444444; 
+            border: solid #444444 2px;
+        }
+        .box{
+            margin: 4px;
+            color: #aaaaaa;
         }
     </style>
-<body class ="container">
-	<p class="middle">
-	    <img src="./glances.png">
-	    <img src="./emby.png">
-	    <img src="./deluge.svg">
-	    <img src="./cockpit.svg">
-	</p>
+    <link href="favicon.png" rel="shortcut icon" type="image/x-icon" />
+</head>
+
+<body>
+    <div id="search">
+        <input id="search-field" type="text" name="search-field" onkeypress="return search(event)" />
+    </div>
+    <div class="container">
+        <div id="clock"></div>
+        <div class="bookmark-container">
+            <div class="bookmark-set">
+                <div class="bookmark-title">Daily</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://to-do.microsoft.com/" ><p class="box">To Do</p></a>
+                    <a class="bookmark" href="https://mail.google.com/" ><p class="box">gMail</p></a>
+                    <a class="bookmark" href="https://drive.google.com/" ><p class="box">gDrive</p></a>
+                    <a class="bookmark" href="https://keep.google.com/" ><p class="box">gKeep</p></a>
+                    <a class="bookmark" href="https://calendar.google.com/" ><p class="box">gCal</p></a>
+                    <a class="bookmark" href="https://getpocket.com/a/queue/list/" ><p class="box">Pocket</p></a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+                <div class="bookmark-title">Media</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://youtube.com" ><p class="box">Youtube</p></a>
+                    <a class="bookmark" href="https://play.spotify.com" ><p class="box">Spotify</p></a>
+                    <a class="bookmark" href="https://musicforprogramming.net" ><p class="box">mfp();</p></a>
+                    <a class="bookmark" href="http://yavin:80" ><p class="box">Heimdall</p></a>
+                    <a class="bookmark" href="http://localhost:5001" ><p class="box">gitit</p></a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+                <div class="bookmark-title">Reddit</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://reddit.com/r/linux" ><p class="box">/r/linux</p></a>
+                    <a class="bookmark" href="https://reddit.com/r/thinkpad" ><p class="box">/r/thinkpad</p></a>
+                    <a class="bookmark" href="https://reddit.com/r/games" ><p class="box">/r/games</p></a>
+                    <a class="bookmark" href="https://reddit.com/r/unixporn" ><p class="box">/r/unixporn</p></a>
+                    <a class="bookmark" href="https://reddit.com/r/worldnews" ><p class="box">/r/worldnews</p></a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+                <div class="bookmark-title">Social</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://web.whatsapp.com" ><p class="box">Whatsapp</p></a>
+                    <a class="bookmark" href="https://web.telegram.org" ><p class="box">Telegram</p></a>
+                    <a class="bookmark" href="https://discordapp.com/channels/@me" ><p class="box">discord</p></a>
+                    <a class="bookmark" href="https://chaospott.de/status.html" ><p class="box">foobar&nbsp;Door</p></a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+                <div class="bookmark-title">Work</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="http://docusuite.de" ><p class="box">ds.de</p></a>
+                    <a class="bookmark" href="http://docusuite.de/administrator" ><p class="box">dsAdmin</p></a>
+                    <a class="bookmark" href="https://mari.edatasystems.de" ><p class="box">mari</p></a>
+                    <a class="bookmark" href="http://192.168.0.10:83" ><p class="box">docuwiki</p></a>
+                    <a class="bookmark" href="http://hvgese010:8081/tfs" ><p class="box">TFS</p></a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+                <div class="bookmark-title">News</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="http://www.heise.de" ><p class="box">heise</p></a>
+                    <a class="bookmark" href="http://www.golem.de" ><p class="box">golem</p></a>
+                    <a class="bookmark" href="https://news.ycombinator.com/" ><p class="box">HackerNews</p></a>
+                    <a class="bookmark" href="https://faz.net/" ><p class="box">FAZ</p></a>
+                    <a class="bookmark" href="https://waz.de/" ><p class="box">WAZ</p></a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+                <div class="bookmark-title">Programming</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://reddit.com/r/learnprogramming" ><p class="box">/r/learnprog.</p></a>
+                    <a class="bookmark" href="https://github.com/" ><p class="box">Github</p></a>
+                    <a class="bookmark" href="https://gist.github.com/" ><p class="box">gisthub</p></a>
+                    <a class="bookmark" href="https://regex101.com/" ><p class="box">regex101</p></a>
+                    <a class="bookmark" href="http://extensionmethod.net/csharp" ><p class="box">extensions</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function search(e) {
+            if (e.keyCode == 13) {
+                var val = document.getElementById("search-field").value;
+                window.open(("https://google.com/search?q=" + val), "_self");
+            }
+        }
+        function getTime() {
+            let date = new Date(),
+                min = date.getMinutes(),
+                hour = date.getHours();
+
+            return "" +
+                (hour < 10 ? ("0" + hour) : hour) + ":" +
+                (min < 10 ? ("0" + min) : min);
+        }
+
+        window.onload = () => {
+            document.getElementById("clock").innerHTML = getTime();
+            setInterval(() => {
+                document.getElementById("clock").innerHTML = getTime();
+            }, 100);
+        }
+
+        document.addEventListener("keydown", event => {
+            if (event.keyCode == 32) {          
+                document.getElementById('search').style.display = 'flex';
+                document.getElementById('search').style.zIndex = 2;
+                document.getElementById('search-field').focus();
+            } else if (event.keyCode == 27) {   
+                document.getElementById('search-field').value = '';
+                document.getElementById('search-field').blur();
+                document.getElementById('search').style.zIndex = 0;
+                document.getElementById('search').style.display = 'none';
+            }
+        });
+    </script>
 </body>
+
 </html>
