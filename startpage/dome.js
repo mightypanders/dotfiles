@@ -36,7 +36,9 @@ var sites = {
 				"E-Mail": {
 					"GMail"				: "https://mail.google.com/mail/u/0/",
 					"Posteo"			: "https://www.posteo.de",
-					"edata"				: "https://mail.edatasystems.de"
+					"edata"				: "https://mail.edatasystems.de",
+					"gCal"				: "https://calendar.google.com/calendar/r",
+					"Keep"				: "https://keep.google.com/u/0/"
 				},
 				"Work": {
 					"TFS"				: "http://192.168.30.70:8080/tfs",
