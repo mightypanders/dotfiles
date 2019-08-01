@@ -52,14 +52,14 @@ var sites = {
 					"discord"			: "https://discordapp.com/channels/@me",
 					"YouTube"			: "https://www.youtube.com/",
 				},
-				"Games": { // To find the game ID check the url in the store page or the community page
+			/*	"Games": { // To find the game ID check the url in the store page or the community page
 					"CS:GO"				: "steam://run/730",
 					"Besiege"			: "steam://run/346010",
 					"Rust"				: "steam://run/252490",
 					"Insurgency"		: "steam://run/222880",
 					"West of Loathing"	: "steam://run/597220",
 					"POSTAL 2"			: "steam://run/223470"
-				},
+				},*/
 				"News": {
                     "worldnews"			: "https://reddit.com/r/worldnews",
 					"golem"				: "https://www.golem.de/",
@@ -82,6 +82,14 @@ var sites = {
                     "games"				: "https://reddit.com/r/games",
                     "switchhaxing"		: "https://reddit.com/r/switchhaxing",
                     "switchhacks"		: "https://reddit.com/r/switchhacks",
+				},
+				"brudi": {
+					"heimdall"			: "http://brudi.xyz",
+					"gitea"				: "http://gitea.brudi.xyz",
+					"etherpad"			: "http://pad.brudi.xyz",
+					"netdata"			: "http://netdata.brudi.xyz",
+					"organizr"			: "http://org.brudi.xyz",
+					"pics"				: "http://pics.brudi.xyz"
 				}
 			};
 
