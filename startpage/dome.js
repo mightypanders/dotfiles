@@ -41,10 +41,12 @@ var sites = {
 		"Keep": "https://keep.google.com/u/0/"
 	},
 	"Work": {
-		"TFS": "http://192.168.30.70:8080/tfs",
-		"wiki": "http://192.168.0.10:83",
-		"ds.de/admin": "http://192.168.100.55/administrator",
-		"mari": "https://mari.edatasystems.de"
+		"gitlab": "https://gitlab.com/nutmountain/landgard?sort=updated_desc",
+		"enfore swagger": "https://app.swaggerhub.com/organizations/enfore.com",
+		"apex": "https://18.185.159.119:8443/ords/f?p=123:LOGIN_DESKTOP:15410784571178:::::",
+		"aws": "https://us-east-1.signin.aws.amazon.com/oauth?SignatureVersion=4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJMOATPLHVSJ563XQ&X-Amz-Date=2019-10-15T15%3A01%3A16.654Z&X-Amz-Signature=5cd9c455e673d043421f5bc47b87c61a438cd5b85d808f85e6b3304f0ef6c2de&X-Amz-SignedHeaders=host&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fhomepage&redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue&response_type=code&state=hashArgs%23",
+		"rc-intranet": "https://realcorevv.sharepoint.com/sites/RC-Intranet/",
+		"food": "https://www.rge-essen.de/dienstleistungen/gastronomie/speiseplaene.html"
 	},
 	"Social": {
 		"WhatsApp": "https://web.whatsapp.com",
@@ -83,6 +85,14 @@ var sites = {
 		"games": "https://reddit.com/r/games",
 		"switchhaxing": "https://reddit.com/r/switchhaxing",
 		"switchhacks": "https://reddit.com/r/switchhacks",
+	},
+	"brudi": {
+		"heimdall": "http://brudi.xyz",
+		"gitea": "http://gitea.brudi.xyz",
+		"etherpad": "http://pad.brudi.xyz",
+		"netdata": "http://netdata.brudi.xyz",
+		"organizr": "http://org.brudi.xyz",
+		"pics": "http://pics.brudi.xyz"
 	}
 };
 
