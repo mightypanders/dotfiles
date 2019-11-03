@@ -33,63 +33,64 @@
 
 // div.innerHTML : {a.innerHTML : a.href}
 var sites = {
-				"E-Mail": {
-					"GMail"				: "https://mail.google.com/mail/u/0/",
-					"Posteo"			: "https://www.posteo.de",
-					"edata"				: "https://mail.edatasystems.de",
-					"gCal"				: "https://calendar.google.com/calendar/r",
-					"Keep"				: "https://keep.google.com/u/0/"
-				},
-				"Work": {
-					"TFS"				: "http://192.168.30.70:8080/tfs",
-					"wiki"				: "http://192.168.0.10:83",
-					"ds.de/admin"		: "http://192.168.100.55/administrator",
-					"mari"				: "https://mari.edatasystems.de"
-				},
-				"Social": {
-					"WhatsApp"			: "https://web.whatsapp.com",
-					"Telegram"			: "https://web.telegram.com",
-					"discord"			: "https://discordapp.com/channels/@me",
-					"YouTube"			: "https://www.youtube.com/",
-				},
-				"Games": { // To find the game ID check the url in the store page or the community page
-					"CS:GO"				: "steam://run/730",
-					"Besiege"			: "steam://run/346010",
-					"Rust"				: "steam://run/252490",
-					"Insurgency"		: "steam://run/222880",
-					"West of Loathing"	: "steam://run/597220",
-					"POSTAL 2"			: "steam://run/223470"
-				},
-				"News": {
-                    "worldnews"			: "https://reddit.com/r/worldnews",
-					"golem"				: "https://www.golem.de/",
-					"heise"				: "https://www.heise.de/",
-					"WAZ"				: "http://www.waz.de",
-					"FAZ"				: "http://www.faz.net",
-					"HackerNews"		: "https://news.ycombinator.com/"
-				},
-				"Programming": {
-                    "/r/programming"	: "https://reddit.com/r/programming",
-                    "Github"			: "https://github.com/",
-                    "gisthub"			: "https://gist.github.com/",
-                    "regex101"			: "https://regex101.com/",
-                    "extensions"		: "http://extensionmethod.net/csharp"
-				},
-				"reddit": {
-                    "linux"				: "https://reddit.com/r/linux",
-                    "thinkpad"			: "https://reddit.com/r/thinkpad",
-                    "unixporn"			: "https://reddit.com/r/unixporn",
-                    "games"				: "https://reddit.com/r/games",
-                    "switchhaxing"		: "https://reddit.com/r/switchhaxing",
-                    "switchhacks"		: "https://reddit.com/r/switchhacks",
-				}
-			};
+	"E-Mail": {
+		"GMail": "https://mail.google.com/mail/u/0/",
+		"Posteo": "https://www.posteo.de",
+		"edata": "https://mail.edatasystems.de",
+		"gCal": "https://calendar.google.com/calendar/r",
+		"Keep": "https://keep.google.com/u/0/"
+	},
+	"Work": {
+		"TFS": "http://192.168.30.70:8080/tfs",
+		"wiki": "http://192.168.0.10:83",
+		"ds.de/admin": "http://192.168.100.55/administrator",
+		"mari": "https://mari.edatasystems.de"
+	},
+	"Social": {
+		"WhatsApp": "https://web.whatsapp.com",
+		"Telegram": "https://web.telegram.com",
+		"discord": "https://discordapp.com/channels/@me",
+		"YouTube": "https://www.youtube.com/",
+	},
+	"The usual": { // To find the game ID check the url in the store page or the community page
+		"Amazon": "https://www.amazon.de",
+		"eBay": "https://www.ebay.de",
+		"PayPal": "http://www.paypal.com",
+		"Lieferando": "http://www.lieferando.de",
+		//"West of Loathing"	: "steam://run/597220",
+		//"POSTAL 2"			: "steam://run/223470"
+	},
+	"News": {
+		"worldnews": "https://reddit.com/r/worldnews",
+		"golem": "https://www.golem.de/",
+		"heise": "https://www.heise.de/",
+		"WAZ": "http://www.waz.de",
+		"FAZ": "http://www.faz.net",
+		"HackerNews": "https://news.ycombinator.com/"
+	},
+	"Programming": {
+		"/r/programming": "https://reddit.com/r/programming",
+		"Github": "https://github.com/",
+		"gisthub": "https://gist.github.com/",
+		"regex101": "https://regex101.com/",
+		"regexr": "https://regexr.com/",
+		"extensions": "http://extensionmethod.net/csharp"
+	},
+	"reddit": {
+		"linux": "https://reddit.com/r/linux",
+		"thinkpad": "https://reddit.com/r/thinkpad",
+		"unixporn": "https://reddit.com/r/unixporn",
+		"games": "https://reddit.com/r/games",
+		"switchhaxing": "https://reddit.com/r/switchhaxing",
+		"switchhacks": "https://reddit.com/r/switchhacks",
+	}
+};
 
 var search = {
-				"default": "https://google.com/search",
-				"d": "https://duckduckgo.com/",
-				"s": "https://startpage.com/do/search"
-			};
+	"default": "https://google.com/search",
+	"d": "https://duckduckgo.com/",
+	"s": "https://startpage.com/do/search"
+};
 
 var pivotmatch = 0;
 var totallinks = 0;
@@ -144,10 +145,10 @@ function matchLinks(regex = prevregexp) {
 			document.getElementById("action").children[0].name = "q";
 		}
 	}
-	document.getElementById("main").style.height = document.getElementById("main").children[0].offsetHeight+"px";
+	document.getElementById("main").style.height = document.getElementById("main").children[0].offsetHeight + "px";
 }
 
-document.onkeydown = function(e) {
+document.onkeydown = function (e) {
 	switch (e.keyCode) {
 		case 38:
 			pivotmatch = pivotmatch >= 0 ? 0 : pivotmatch + 1;
@@ -163,7 +164,7 @@ document.onkeydown = function(e) {
 	document.getElementById("action").children[0].focus();
 }
 
-document.getElementById("action").children[0].onkeypress = function(e) {
+document.getElementById("action").children[0].onkeypress = function (e) {
 	if (e.key == "ArrowDown" || e.key == "ArrowUp") {
 		return false;
 	}
@@ -171,14 +172,14 @@ document.getElementById("action").children[0].onkeypress = function(e) {
 
 function displayClock() {
 	now = new Date();
-	clock = (now.getHours() < 10 ? "0"+now.getHours() : now.getHours())+":"
-			+(now.getMinutes() < 10 ? "0"+now.getMinutes() : now.getMinutes())+":"
-			+(now.getSeconds() < 10 ? "0"+now.getSeconds() : now.getSeconds());
+	clock = (now.getHours() < 10 ? "0" + now.getHours() : now.getHours()) + ":"
+		+ (now.getMinutes() < 10 ? "0" + now.getMinutes() : now.getMinutes()) + ":"
+		+ (now.getSeconds() < 10 ? "0" + now.getSeconds() : now.getSeconds());
 	document.getElementById("clock").innerHTML = clock;
 }
 
 window.onload = matchLinks();
-document.getElementById("action").onsubmit = function() {
+document.getElementById("action").onsubmit = function () {
 	svalue = this.children[0].value;
 	if (svalue.charAt(1) == ' ' && search.hasOwnProperty(svalue.charAt(0))) {
 		this.children[0].value = svalue.substring(2);
