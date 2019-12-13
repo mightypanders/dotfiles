@@ -53,6 +53,7 @@ var sites = {
 					"Telegram"			: "https://web.telegram.com",
 					"discord"			: "https://discordapp.com/channels/@me",
 					"YouTube"			: "https://www.youtube.com/",
+					"tinder"			: "https://tinder.com"
 				},
 			/*	"Games": { // To find the game ID check the url in the store page or the community page
 					"CS:GO"				: "steam://run/730",
