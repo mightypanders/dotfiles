@@ -50,7 +50,7 @@ var sites = {
 				},
 				"Social": {
 					"WhatsApp"			: "https://web.whatsapp.com",
-					"Telegram"			: "https://web.telegram.com",
+					"Telegram"			: "https://web.telegram.org",
 					"discord"			: "https://discordapp.com/channels/@me",
 					"YouTube"			: "https://www.youtube.com/",
 					"tinder"			: "https://tinder.com"
