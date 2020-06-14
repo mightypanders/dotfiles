@@ -27,3 +27,23 @@ let mapleader=" "
 map <leader>h :set cursorline!<CR>
 xnoremap p "_dP
 nnoremap <esc><esc> :noh<return><esc>
+
+if has('nvim')
+	call plug#begin(stdpath('data') . '/plugged')
+		Plug 'junegunn/vim-easy-align'
+		Plug 'morhetz/gruvbox'
+		Plug 'Shougo/deoplete.nvim', {'do':':UpdateRemotePlugins'}
+		Plug 'junegunn/fzf', {'do': {->fzf#install()}}
+		Plug 'jiangmiao/auto-pairs'
+		Plug 'machakann/vim-sandwich'
+		Plug 'machakann/vim-highlightedyank'
+		Plug 'bling/vim-airline'
+		Plug 'airblade/vim-gitgutter'
+		Plug 'rhysd/vim-clang-format'
+		Plug 'easymotion/vim-easymotion'
+	call plug#end()
+
+	autocmd vimenter * colorscheme gruvbox
+	let g:deoplete#enable_at_startup = 1
+	let g:clang_format#auto_format=1
+endif
