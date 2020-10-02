@@ -42,8 +42,6 @@ var sites = {
   Work: {
     gitlab: "https://gitlab.com/nutmountain/landgard?sort=updated_desc",
     "enfore api docs": "https://docs.apis.enfore.com/",
-    "n4 daily":
-      "https://zoom.us/j/274186354?pwd=Z29yamZaZ3dHV2ZOM1o2UkVHVUdpQT09",
     apex:
       "https://18.185.159.119:8443/ords/f?p=123:LOGIN_DESKTOP:15410784571178:::::",
     aws:
@@ -87,8 +85,7 @@ var sites = {
     sffpc: "https://reddit.com/r/sffpc",
     unixporn: "https://reddit.com/r/unixporn",
     games: "https://reddit.com/r/games",
-    switchhaxing: "https://reddit.com/r/switchhaxing",
-    switchhacks: "https://reddit.com/r/switchhacks",
+    switchhacking: "https://reddit.com/r/switchhaxing+switchhacks",
   },
   brudi: {
     heimdall: "http://brudi.xyz",
